@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 
 export default function App() {
   return (
-    <div className='bg-gray-100 h-screen w-scren overflow-hidden'>
+    <div className='bg-[#F6F8FC] h-screen w-scren overflow-hidden'>
       <Navbar/>
     </div>
   )

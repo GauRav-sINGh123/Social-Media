@@ -26,7 +26,7 @@ function Navbar() {
         //   value={search}
         //   onChange={(e) => setSearch(e.target.value)}
           placeholder='Seach mail'
-          className='lg:w-1/2 rounded-full w-full bg-transparent outline-none px-1'
+          className='rounded-full w-full bg-transparent outline-none px-1'
         />
       </div>
     </div>
