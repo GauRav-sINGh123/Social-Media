@@ -1,10 +1,13 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+import Navbar1 from './components/Navbar2'
+import Sidebar2 from './components/Sidebar2'
 
 export default function App() {
   return (
-    <div className='bg-[#F6F8FC] h-screen w-scren overflow-hidden'>
-      <Navbar/>
+    <div className='bg-[#f9fbff] h-screen w-scren overflow-hidden'>
+      <Navbar1/>
+      <hr className='border-gray-400 border-[2px]'/>
+      <Sidebar2/>
     </div>
   )
 }
