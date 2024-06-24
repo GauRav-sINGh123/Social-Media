@@ -1,13 +1,17 @@
-import React from 'react'
-import Navbar1 from './components/Navbar2'
-import Sidebar2 from './components/Sidebar2'
-
-export default function App() {
-  return (
-    <div className='bg-[#f9fbff] h-screen w-scren overflow-hidden'>
-      <Navbar1/>
-      <hr className='border-gray-400 border-[2px]'/>
-      <Sidebar2/>
-    </div>
-  )
-}
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Home from './components/Home.jsx'
+ 
+ function App() {
+   return (
+     <div className='w-scree h-screen flex justify-start items-start overflow-hidden'>
+        <Routes>
+          <Route path="/home/*" element={<Home />}/>
+          
+         {/* If route is not matching  */}
+          <Route path='*' element={<Navigate to={'/home'} />}/> 
+        </Routes>
+     </div> 
+   )
+ }
+ 
+ export default App
