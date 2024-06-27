@@ -1,18 +1,21 @@
 import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdHome } from "react-icons/md";
+import {SignUp, Projects} from "../components/index";
 import { Link } from "react-router-dom";
+import { FaSearchengin } from "react-icons/fa6";
 import "../index.css";
 import { HiChevronDoubleLeft } from "react-icons/hi2";
 function Home() {
   const [isSideMenu, setSideMenu] = useState(false);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
   return (
     <>
       <div
         className={`w-2 ${
-          isSideMenu ? "w-2" : "flex-[.15] xl:flex[.4]"
-        } min-h-screen max-h-screen relative bg-secondary hidden lg:block `}
+          isSideMenu ? "w-2" : "flex-[.15] xl:flex[.4] w-80 lg:70 "  
+        } min-h-screen max-h-screen relative bg-secondary    `}
       >
         {/* Anchor */}
         <motion.div
@@ -39,12 +42,12 @@ function Home() {
               </p>
             </div>
           {/*start coding */}
-          <Link className="flex items-center justify-center object-contain  px-5 ">
+          <Link className="flex-1 flex items-center justify-center object-contain  px-5 ">
             <div
               id="button-anon-pen"
-              className="w-40   text-center text-white no-underline block rounded-md overflow-hidden  bg-gradient-to-r from-green-400 via-yellow-400  to-blue-400  hover:from-green-500  hover:via-yellow-500  hover:to-blue-500 "
+              className="w-40 text-sm sm:text-lg  text-center text-white no-underline block rounded-md overflow-hidden  bg-gradient-to-r from-green-400 via-yellow-400  to-blue-400  hover:from-green-500  hover:via-yellow-500  hover:to-blue-500 "
             >
-              <span className="block px-2 py-3 font-light lg:text-[17px]  bg-black rounded-sm my-[2px] mx-[3px]">
+              <span className="block px-2 py-3 font-light   bg-black rounded-sm my-[2px] mx-[3px]">
                 Start Coding
               </span>
             </div>
@@ -65,8 +68,50 @@ function Home() {
         </div>
       </div>
       {/* side menu */}
-      <div>
+      <div className="flex-1 min-h-screen max-h-screen overflow-y-scroll
+      h-full flex flex-col items-start justify-start px-4 md:px-12 py-4
+      md:py-12">
+         {/* topsection */}
+         <div className="w-full flex items-center justify-between gap-3"> 
+   
+        {/* search section */}
+        <div className="bg-secondary w-full px-4 py-3 rounded-md flex
+        items-center justify-center">
+          <FaSearchengin className="text-2xl text-primaryText "/>
+          <input 
+          className="flex-1 px-4  text-md sm:text-xl bg-transparent
+          outline-none border-none text-primaryText
+          placeholder:text-gray-600"
+          type="text"
+          placeholder="Search here..."
+          />
+        </div>
 
+        {/* profile section */}
+         {
+          !user&&(
+            <div className="flex items-center justify-center ">
+              <Link to={"/home/auth"} className="bg-emerald-500 px-7 py-[10px] rounded-md
+              text-white text-lg cursor-pointer hover:bg-emerald-700 hover:scale-105 transition-all ease-in-out">
+                 Signup
+              </Link>
+            </div>
+          )
+         }
+         {
+          user && (
+            <div className=""></div>
+          )
+         }
+         </div>
+
+         {/* bottom section */}
+         <div className="w-full ">
+            <Routes>
+              <Route path="/*" element={<Projects />}/>
+              <Route path="/auth" element={<SignUp />}/>
+            </Routes>
+          </div>
       </div>
     </>
   );
