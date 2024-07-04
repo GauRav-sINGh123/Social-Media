@@ -1,15 +1,15 @@
 import React from 'react'
 import SignUp from './components/SignIn'
-import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+ 
 
  
 function App() {
   return (
-  <div className="bg-neutral-950">
-    <Routes>
-      <Route path="/" element={<SignUp />} />
-       
-    </Routes>
+  <div className="">
+    <Navbar/>
+    <Sidebar/>
   </div>
   )
 }
