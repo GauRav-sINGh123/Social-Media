@@ -1,15 +1,16 @@
 import React from 'react'
-import SignUp from './components/SignIn'
+import SignIn from './components/SignIn'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import Home from './components/Home'
+import Main from './components/Main'
  
 
  
 function App() {
   return (
   <div className="">
-    <Navbar/>
-    <Sidebar/>
+    <Main/>
   </div>
   )
 }
