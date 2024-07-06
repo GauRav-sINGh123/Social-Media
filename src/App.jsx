@@ -1,17 +1,18 @@
 import React from 'react'
 import SignIn from './components/SignIn'
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
+import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
-import Main from './components/Main'
  
 
  
 function App() {
   return (
-  <div className="">
-    <Main/>
-  </div>
+   <>
+   <Routes>
+    <Route path="/" element={<SignIn />} />
+    <Route path="/home" element={<Home/>} />
+   </Routes>
+   </>
   )
 }
 
